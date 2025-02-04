@@ -1,14 +1,26 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import { HashRouter, Route, Routes } from "react-router-dom";
+import "./index.css";
+import reportWebVitals from "./reportWebVitals";
+import DefaultErrorPage from "modules/error/defaultErrorPage";
+import HomePage from "modules/home/homePage";
 
-const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
+const root = ReactDOM.createRoot(
+  document.getElementById("root") as HTMLElement
+);
 
 root.render(
   <React.StrictMode>
-    <App />
+    <HashRouter>
+      <Routes>
+        <Route
+          path="/*"
+          element={<HomePage />}
+          errorElement={<DefaultErrorPage />}
+        />
+      </Routes>
+    </HashRouter>
   </React.StrictMode>
 );
 
