@@ -1,27 +1,25 @@
-import React from "react";
 import ReactDOM from "react-dom/client";
 import { HashRouter, Route, Routes } from "react-router-dom";
 import "./index.css";
 import reportWebVitals from "./reportWebVitals";
 import DefaultErrorPage from "modules/error/defaultErrorPage";
 import HomePage from "modules/home/homePage";
+import { RouterPath } from "constants/enums";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
 
 root.render(
-  <React.StrictMode>
     <HashRouter>
       <Routes>
         <Route
-          path="/*"
+          path={RouterPath.Initial}
           element={<HomePage />}
           errorElement={<DefaultErrorPage />}
         />
       </Routes>
     </HashRouter>
-  </React.StrictMode>
 );
 
 // If you want to start measuring performance in your app, pass a function

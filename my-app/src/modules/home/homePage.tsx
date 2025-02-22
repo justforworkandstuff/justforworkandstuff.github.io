@@ -1,43 +1,70 @@
-import { useState } from "react";
-import sound from '../../assets/audios/cursor.mp3';
+import { useState, useEffect, useRef } from "react";
+import cursorSelectionSound from "../../assets/audios/cursor.mp3";
+import MenuButton from "./components/menuButton";
+import { MenuType } from "constants/enums";
+import AboutPage from "modules/about/aboutPage";
+import ContactPage from "modules/contact/contactPage";
+import ProjectsPage from "modules/projects/projectsPage";
 
 const HomePage = () => {
-  const [selected, setSelected] = useState(0);
-//   const cursorEffect = new Audio("../../assets/audios/cursor.mp3");
-const cursorEffect = new Audio(sound);
-  const menuItems = ["About", "Projects", "Experiences", "Contact"];
+  const [selectedMenu, setSelectedMenu] = useState<MenuType>(MenuType.About);
+  const audioContext = useRef<AudioContext | null>(null);
+  const bufferRef = useRef<AudioBuffer | null>(null);
+  const menuComponents = {
+    [MenuType.About]: <AboutPage />,
+    [MenuType.Projects]: <ProjectsPage />,
+    [MenuType.Contact]: <ContactPage />,
+  };
+
+  useEffect(() => {
+    setupAudioEffect();
+  }, []);
+
+  const setupAudioEffect = () => {
+    audioContext.current = new AudioContext();
+    fetch(cursorSelectionSound)
+      .then((res) => res.arrayBuffer())
+      .then((data) => audioContext.current!.decodeAudioData(data))
+      .then((buffer) => {
+        bufferRef.current = buffer;
+      });
+  };
 
   const playSoundEffect = () => {
-    cursorEffect.play();
-  }
+    if (audioContext.current && bufferRef.current) {
+      const source = audioContext.current.createBufferSource();
+      source.buffer = bufferRef.current;
+      source.connect(audioContext.current.destination);
+      source.start(0);
+    }
+  };
 
-  const onItemSelection = (index: number) => {
-    setSelected(index);
+  const onItemSelection = (newMenuType: MenuType) => {
+    setSelectedMenu(newMenuType);
     playSoundEffect();
-  }
+  };
 
   return (
-    <div className="h-screen w-screen flex items-center justify-center pl-10 bg-black text-white">
-      <div className="flex flex-col space-y-2">
-        <h1 className="text-xl font-bold mb-4">justforworkandstuff</h1>
-        {menuItems.map((item, index) => (
-          <div key={index} className="relative">
-            {selected === index && (
-              <button className="absolute -left-[4px] px-4 py-2 text-lg text-start font-bold text-white border-l-2 border-white-400 bg-gradient-to-r from-blue-400 w-full">
-                {item}
-              </button>
-            )}
-
-            <button
-              onClick={() => onItemSelection(index)}
-              className={`px-4 py-2 text-lg font-bold border-gray-400 border-l-2 opacity-50 text-start bg-gradient-to-r from-blue-500 to-transparent w-full 
-          ${selected === index ? "text-transparent" : "text-gray-400"}`}
-            >
-              {item}
-            </button>
-          </div>
-        ))}
+    <div className="h-screen flex bg-black">
+      {/* Menu Components */}
+      <div className="h-screen flex-[1] flex items-end justify-center p-10">
+        <div className="flex flex-col space-y-2">
+          <h1 className="text-xl font-bold mb-4 text-white">
+            justforworkandstuff
+          </h1>
+          {Object.values(MenuType).map((item, index) => (
+            <MenuButton
+              key={index}
+              currentMenuType={item}
+              selectedMenuType={selectedMenu}
+              onItemSelection={onItemSelection}
+            />
+          ))}
+        </div>
       </div>
+
+      {/* Pages Component */}
+      <div className="flex-[4]">{menuComponents[selectedMenu]}</div>
     </div>
   );
 };
