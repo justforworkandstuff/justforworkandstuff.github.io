@@ -29,7 +29,7 @@ const ExperienceCardMobile = (props: ExperienceCardMobileProps) => {
       initial={{ opacity: 0, y: -20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, delay: 0.2, ease: "easeIn" }}
-      className={`w-full h-full flex items-start justify-start text-base leading-5 overflow-y-auto scrollbar-hide flex-nowrap ${
+      className={`w-full h-full flex items-start justify-start text-base leading-5 ${
         isThemeLight ? "text-black" : "text-gray-300"
       }`}
     >

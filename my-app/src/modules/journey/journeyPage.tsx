@@ -34,7 +34,7 @@ const JourneyPage = () => {
 
   return (
     <div
-      className={`min-h-screen w-full flex flex-col flex-1 items-center md:justify-center pt-4 md:pt-0 mb-6 md:mb-0 ${
+      className={`min-h-screen w-full flex flex-col items-center md:justify-center py-2 ${
         isThemeLight ? "bg-white text-black" : "bg-black text-white"
       }`}
     >
@@ -60,7 +60,7 @@ const JourneyPage = () => {
       )}
 
       <div
-        className={`w-[95%] h-[90vh] border relative p-8 flex md:flex-row flex-col overflow-y-auto scrollbar-hide ${
+        className={`w-[95%] h-full flex-1 border relative p-8 flex md:flex-row flex-col overflow-y-auto scrollbar-hide ${
           isThemeLight ? "border-black" : "border-gray-500"
         }`}
       >
