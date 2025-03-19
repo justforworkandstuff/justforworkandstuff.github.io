@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.2d64858b.css",
-    "main.js": "/static/js/main.f28080e7.js",
+    "main.css": "/static/css/main.048dad8b.css",
+    "main.js": "/static/js/main.c75107b3.js",
     "static/js/453.ed3810f9.chunk.js": "/static/js/453.ed3810f9.chunk.js",
     "static/media/LinBiolinum_RI.otf": "/static/media/LinBiolinum_RI.1ae62d44bc84723e0462.otf",
     "static/media/LinBiolinum_R.otf": "/static/media/LinBiolinum_R.01b9050186d71aba65b9.otf",
@@ -30,12 +30,12 @@
     "static/media/azure.svg": "/static/media/azure.eb929115f2eaef8a45f92ed12ea4e14d.svg",
     "static/media/linkedIn_light.svg": "/static/media/linkedIn_light.c341cc1c307221b0fe42599c619ceeaf.svg",
     "static/media/tailwind.svg": "/static/media/tailwind.973c73e85d4daa24b257ba20298716c4.svg",
-    "main.2d64858b.css.map": "/static/css/main.2d64858b.css.map",
-    "main.f28080e7.js.map": "/static/js/main.f28080e7.js.map",
+    "main.048dad8b.css.map": "/static/css/main.048dad8b.css.map",
+    "main.c75107b3.js.map": "/static/js/main.c75107b3.js.map",
     "453.ed3810f9.chunk.js.map": "/static/js/453.ed3810f9.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.2d64858b.css",
-    "static/js/main.f28080e7.js"
+    "static/css/main.048dad8b.css",
+    "static/js/main.c75107b3.js"
   ]
 }
