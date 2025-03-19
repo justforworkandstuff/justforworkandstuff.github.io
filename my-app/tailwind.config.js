@@ -4,7 +4,14 @@ const plugin = require("tailwindcss/plugin");
 module.exports = {
   content: ["./src/**/**/*.{html,js,jsx,ts,tsx}"],
   theme: {
-    extend: {},
+    extend: {
+      height: {
+        'dvh': '100dvh',
+      },
+      minHeight: {
+        'dvh': '100dvh',
+      }
+    },
   },
   plugins: [
     require('tailwindcss-debug-screens'),

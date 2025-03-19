@@ -16,14 +16,14 @@ function DefaultErrorPage() {
 
   return (
     <div
-      className={`min-h-screen w-screen flex flex-col items-center justify-center ${
+      className={`min-h-dvh w-full flex flex-col items-center md:justify-center py-2 ${
         isThemeLight ? "bg-white text-black" : "bg-black text-white"
       }`}
     >
       <ThemeSection />
 
       <div
-        className={`w-[95%] h-[90vh] border relative p-12 flex items-center justify-center ${
+        className={`w-[95%] h-full flex-1 border relative p-8 flex items-center justify-center ${
           isThemeLight ? "border-black" : "border-gray-500"
         }`}
       >
