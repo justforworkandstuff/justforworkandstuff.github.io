@@ -29,13 +29,13 @@ const ProjectDetailCard = (props: ProjectDetailCardProps) => {
       initial={{ opacity: 0, scale: 0.8, x: 150 }}
       animate={{ opacity: 1, scale: 1, x: 0 }}
       transition={{ duration: 0.5, ease: "easeOut" }}
-      className={`w-full h-full flex flex-col text-start items-end justify-center leading-4 ${
+      className={`w-full h-full flex flex-col text-start items-start md:items-end justify-start md:justify-center leading-6 md:leading-4 ${
         isThemeLight ? "text-black" : "text-gray-300"
       }`}
     >
       <div className="flex flex-col items-start justify-start max-w-lg">
         {/* Project Title & Stack */}
-        <div className="min-w-full flex flex-row items-center mb-4">
+        <div className="min-w-full flex flex-row items-center md:mb-4">
           <p className="hidden md:block text-2xl font-semibold">{item.title}</p>
           <p className="block md:hidden text-2xl font-semibold pr-2">
             {item.title}

@@ -21,7 +21,7 @@ const ContactPage = () => {
 
   return (
     <div
-      className={`min-h-screen w-full flex flex-col flex-1 items-center md:justify-center pt-4 md:pt-0 ${
+      className={`min-h-screen w-full flex flex-col items-center justify-center ${
         isThemeLight ? "bg-white text-black" : "bg-black text-white"
       }`}
     >
@@ -42,7 +42,7 @@ const ContactPage = () => {
       )}
 
       <div
-        className={`w-[95%] md:min-h-[90vh] border relative p-8 flex md:flex-row flex-col ${
+        className={`w-[95%] h-[90vh] border relative xl:p-8 p-10 flex md:flex-row flex-col ${
           isThemeLight ? "border-black" : "border-gray-500"
         }`}
       >
@@ -53,7 +53,7 @@ const ContactPage = () => {
           />
         </div>
 
-        <div className="md:flex-[4] mt-12 md:mt-0">
+        <div className="md:flex-[4] mt-auto">
           <ContactDescription
             isThemeLight={isThemeLight}
           />

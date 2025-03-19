@@ -66,7 +66,7 @@ const ProjectsPage = () => {
       )}
 
       <div
-        className={`w-[95%] h-[90vh] border relative p-8 flex md:flex-row flex-col overflow-y-auto scrollbar-hide ${
+        className={`w-[95%] h-[90vh] border relative xl:p-8 p-10 flex md:flex-row flex-col overflow-y-auto scrollbar-hide ${
           isThemeLight ? "border-black" : "border-gray-500"
         }`}
       >
