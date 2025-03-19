@@ -34,7 +34,7 @@ const JourneyPage = () => {
 
   return (
     <div
-      className={`min-h-screen w-full flex flex-col items-center md:justify-center py-2 ${
+      className={`min-h-dvh w-full flex flex-col items-center md:justify-center py-2 ${
         isThemeLight ? "bg-white text-black" : "bg-black text-white"
       }`}
     >
