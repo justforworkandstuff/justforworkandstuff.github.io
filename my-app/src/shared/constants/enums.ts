@@ -2,6 +2,7 @@ export enum RouterPath {
   Home = "/",
   Journey = "/journey",
   Projects = "/projects",
+  ProjectDetail = "/projects/:id",
   Contact = "/contact",
 }
 

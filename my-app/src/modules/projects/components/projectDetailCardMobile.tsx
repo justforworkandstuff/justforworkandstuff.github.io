@@ -33,9 +33,9 @@ const ProjectDetailCardMobile = (props: ProjectDetailCardMobileProps) => {
         isThemeLight ? "text-black" : "text-gray-300"
       }`}
     >
-      <div className="flex flex-col items-start justify-start max-w-lg">
+      <div className="flex flex-col items-start justify-start">
         {/* Project Title & Stack */}
-        <div className="min-w-full flex flex-row items-center">
+        <div className="w-full flex flex-row items-center">
           <p className="text-2xl font-semibold pr-2">{item.title}</p>
 
           <div className="flex-1 flex flex-row justify-end space-x-2">

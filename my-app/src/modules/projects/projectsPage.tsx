@@ -1,6 +1,6 @@
 import { useMediaQuery } from "@mui/material";
 import { useEffect, useRef, useState } from "react";
-import { Outlet, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import CustomDrawer from "shared/components/customDrawer";
 import DrawerMenuContent from "shared/components/drawerMenuContent";
 import MenuSection from "shared/components/menuSection";
@@ -39,11 +39,10 @@ const ProjectsPage = () => {
 
   return (
     <div
-      className={`min-h-screen w-screen flex flex-col items-center justify-center ${
+      className={`min-h-screen w-full flex flex-col items-center md:justify-center py-2 ${
         isThemeLight ? "bg-white text-black" : "bg-black text-white"
       }`}
     >
-      <Outlet /> 
       <ThemeSection />
 
       {showDrawer && !isMediumScreen && (
@@ -66,11 +65,11 @@ const ProjectsPage = () => {
       )}
 
       <div
-        className={`w-[95%] h-[90vh] border relative p-8 flex md:flex-row flex-col overflow-y-auto scrollbar-hide ${
+        className={`w-[95%] h-full flex-1 border relative flex md:flex-row flex-col ${
           isThemeLight ? "border-black" : "border-gray-500"
         }`}
       >
-        <div className="md:flex-[1]">
+        <div className="md:flex-[1] p-8">
           <MenuSection
             defaultMenuType={MenuType.Projects}
             onDrawerMenuClicked={toggleDrawer}
@@ -78,7 +77,7 @@ const ProjectsPage = () => {
         </div>
 
         {/* Project List */}
-        <div className={`flex-1 md:flex-[4] mt-6`}>
+        <div className={`flex-1 md:flex-[4] px-8`}>
             <ProjectItemListing
               projectList={projectList}
               isThemeLight={isThemeLight}

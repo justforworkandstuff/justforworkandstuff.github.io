@@ -34,13 +34,12 @@ root.render(
           path={RouterPath.Projects}
           element={<ProjectsPage />}
           errorElement={<DefaultErrorPage />}
-        >
-          <Route
-            path={":id"}
+        />
+        <Route
+            path={RouterPath.ProjectDetail}
             element={<ProjectDetailPage />}
             errorElement={<DefaultErrorPage />}
           />
-        </Route>
         <Route
           path={RouterPath.Contact}
           element={<ContactPage />}

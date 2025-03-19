@@ -36,7 +36,7 @@ const ProjectDetailPage = () => {
 
   return (
     <div
-      className={`min-h-screen w-full flex flex-col flex-1 items-center md:justify-center pt-4 md:pt-0 ${
+      className={`min-h-screen w-full flex flex-col items-center md:justify-center py-2 ${
         isThemeLight ? "bg-white text-black" : "bg-black text-white"
       }`}
     >
@@ -62,11 +62,11 @@ const ProjectDetailPage = () => {
       )}
 
       <div
-        className={`w-[95%] h-[90vh] border relative p-8 flex md:flex-row flex-col overflow-y-auto scrollbar-hide ${
+        className={`w-[95%] h-full flex-1 border relative flex md:flex-row flex-col overflow-y-auto scrollbar-hide ${
           isThemeLight ? "border-black" : "border-gray-500"
         }`}
       >
-        <div className="md:flex-[1]">
+        <div className="md:flex-[1] p-8">
           <MenuSection
             defaultMenuType={MenuType.Projects}
             onDrawerMenuClicked={toggleDrawer}
@@ -74,7 +74,7 @@ const ProjectDetailPage = () => {
         </div>
 
         {selectedProjectDetail && (
-          <div className="hidden md:block flex-[4]">
+          <div className="hidden md:block flex-[4] px-8">
             <ProjectDetailCard
               item={selectedProjectDetail}
               isThemeLight={isThemeLight}
@@ -83,7 +83,7 @@ const ProjectDetailPage = () => {
         )}
 
         {selectedProjectDetail && (
-          <div className="block md:hidden flex-1 mt-6">
+          <div className="block md:hidden flex-1 px-8">
             <ProjectDetailCardMobile
               item={selectedProjectDetail}
               isThemeLight={isThemeLight}

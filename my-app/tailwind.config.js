@@ -8,14 +8,14 @@ module.exports = {
   },
   plugins: [
     require('tailwindcss-debug-screens'),
-    plugin(function ({ addBase }) {
-      addBase({
-        "html, body": {
-          overscrollBehavior: "none",
-          overflow: "hidden",
-        },
-      });
-    }),
+    // plugin(function ({ addBase }) {
+    //   addBase({
+    //     "html, body": {
+    //       overscrollBehavior: "none",
+    //       overflow: "hidden",
+    //     },
+    //   });
+    // }),
     plugin(function ({ addUtilities }) {
       addUtilities({
         ".scrollbar-hide": {
