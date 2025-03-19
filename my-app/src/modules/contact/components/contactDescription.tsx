@@ -38,7 +38,7 @@ const ContactDescription = (props: ContactDescriptionProps) => {
       initial={{ opacity: 0, y: -20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, delay: 0.2, ease: "easeIn" }}
-      className={`w-full h-full ml-auto flex flex-col items-end justify-end max-w-sm text-right text-lg md:text-base leading-6 md:leading-4 ${
+      className={`w-full h-full ml-auto flex flex-col items-end justify-end max-w-sm text-right text-base leading-5 md:leading-4 ${
         isThemeLight ? "text-black" : "text-gray-300"
       }`}
     >
