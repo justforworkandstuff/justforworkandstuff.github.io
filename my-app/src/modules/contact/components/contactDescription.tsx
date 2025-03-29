@@ -74,7 +74,18 @@ const ContactDescription = (props: ContactDescriptionProps) => {
               onIconClicked={onMediumClicked}
             /> */}
       </div>
+
       <p className="w-full">I look forward to hearing from you.</p>
+
+      <a href="/cv_2025.pdf" download="CV_VITTI_NG.pdf">
+        <button
+          className={`mt-8 p-3 border rounded-md hover:scale-125 transition-transform duration-300 ${
+            isThemeLight ? "text-black border-black" : "text-white border-white"
+          }`}
+        >
+          Download CV
+        </button>
+      </a>
     </motion.div>
   );
 };
