@@ -8,7 +8,7 @@ const useUserService = () => {
       id: 1,
       title: "Agmo Studio",
       startDate: ".2022",
-      endDate: "2025.",
+      endDate: "",
       role: "Software Developer | Mobile & Full-Stack Development",
       location: "Petaling Jaya, Malaysia",
       description: [
@@ -20,6 +20,19 @@ const useUserService = () => {
         "•	Manage multiple projects, ensuring timely delivery and quality standards.",
       ],
     },
+    {
+      id: 2,
+      title: "dtcpay",
+      startDate: ".2025",
+      endDate: "present.",
+      role: "Flutter Engineer | Mobile Development",
+      location: "Kuala Lumpur, Malaysia",
+      description: [
+        "•	Build and maintain the Flutter-based fintech app with focus on performance and stability.",
+        "•	Collaborate with product, design (Figma), and backend teams to deliver user-centric features.",
+        "•	Ensure app quality through testing, debugging, and ongoing performance improvements.",
+      ]
+    }
   ];
 
   const userData: UserDataType = {
